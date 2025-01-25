@@ -1,0 +1,23 @@
+{
+  "name": "@a.poltoradnev/test-npm-package",
+  "version": "0.0.1",
+  "description": "test npm package",
+  "author": "Alexey Poltoradnev <@poltoradnevone@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lifeisbeautifu1/test-npm-package"
+  },
+  "bugs": {
+    "email": "poltoradnevone@gmail.com",
+    "url": "https://github.com/lifeisbeautifu1/test-npm-package/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}
