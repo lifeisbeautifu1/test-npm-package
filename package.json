@@ -5,7 +5,7 @@
   "author": "Alexey Poltoradnev <@poltoradnevone@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lifeisbeautifu1/test-npm-package"
+    "url": "git+https://github.com/lifeisbeautifu1/test-npm-package.git"
   },
   "bugs": {
     "email": "poltoradnevone@gmail.com",
