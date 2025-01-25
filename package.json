@@ -11,9 +11,15 @@
     "email": "poltoradnevone@gmail.com",
     "url": "https://github.com/lifeisbeautifu1/test-npm-package/issues"
   },
-  "main": "index.js",
+  "files": [
+    "lib/**/*"
+  ],
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
   "scripts": {
-    "build": "tsc",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build": "npm run build:esm && npm run build:cjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "MIT",
