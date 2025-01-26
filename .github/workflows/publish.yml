@@ -1,4 +1,4 @@
-name: Build and Publish
+name: Build, Publish and Release
 
 on:
   push:
@@ -31,3 +31,19 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish --access public
+
+      - name: Get version from package.json
+        id: get_version
+        run: echo "::set-output name=version::$(node -p \"require('./package.json').version\")"
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ steps.get_version.outputs.version }}
+          release_name: Release v${{ steps.get_version.outputs.version }}
+          body: ${{ github.event.head_commit.message }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
